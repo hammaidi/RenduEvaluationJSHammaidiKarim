@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Sliders</title>
+    <script>
+        
+        function changeLabel(event) {
+            const input = event.target; // Cible l'élément <input> qui a changé
+            const label = document.querySelector(`label[for=${input.id}]`); // Trouve le label correspondant
+            const span = label.querySelector('span'); // Cherche un span existant dans le label
+
+            if (span) {
+                
+                span.textContent = `: ${input.value}`;
+            } else {
+                
+                const newSpan = document.createElement('span');
+                newSpan.textContent = `: ${input.value}`;
+                label.appendChild(newSpan); // Ajoute le span au label
+            }
+        }
+
+        
+        function Init() {
+            const sliders = document.querySelectorAll('input[type="range"]'); // Sélectionne tous les sliders
+            sliders.forEach(slider => {
+                slider.addEventListener('input', changeLabel);
+            });
+        }
+    </script>
+</head>
+<body onload="Init()">
+    <label for="slider_red">Niveau de rouge</label><input id="slider_red" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_green">Niveau de vert</label><input id="slider_green" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_blue">Niveau de bleu</label><input id="slider_blue" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_size">Taille</label><input id="slider_size" type="range" min="8" max="16" step="1"><br>
+
+    <p id="info">Ceci est un texte.</p>
+</body>
+</html>

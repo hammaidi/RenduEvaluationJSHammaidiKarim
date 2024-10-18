@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Sliders3</title>
+    <script>
+        // Fonction pour mettre à jour le span avec la dernière valeur du champ
+        function changeLabel(event) {
+            const input = event.target; // Cible l'élément <input> qui a changé
+            const label = document.querySelector(`label[for=${input.id}]`); // Trouve le label correspondant
+            let span = label.querySelector('span'); // Cherche un span existant
+
+            if (!span) {
+                // Si aucun span n'existe, le créer
+                span = document.createElement('span');
+                label.appendChild(span);
+            }
+
+            // Mettre à jour le contenu du span avec la valeur actuelle du slider
+            span.textContent = `: ${input.value}`;
+        }
+
+        // Initialisation des sliders
+        function Init() {
+            const sliders = document.querySelectorAll('input[type="range"]');
+            sliders.forEach(slider => {
+                slider.addEventListener('input', changeLabel);
+            });
+        }
+    </script>
+</head>
+<body onload="Init()">
+    <label for="slider_red">Niveau de rouge</label><input id="slider_red" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_green">Niveau de vert</label><input id="slider_green" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_blue">Niveau de bleu</label><input id="slider_blue" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_size">Taille</label><input id="slider_size" type="range" min="8" max="16" step="1"><br>
+
+    <p id="info">Ceci est un texte.</p>
+</body>
+</html>

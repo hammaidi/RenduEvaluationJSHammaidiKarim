@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Clic2</title>
+	
+</head>
+<body>
+
+	<p>Une citation de Pierre Dac&thinsp;: 
+        <q onclick="changeColor()">Parler pour ne rien dire et ne rien dire pour parler sont les deux principes majeurs et rigoureux de tous ceux qui feraient mieux de la fermer avant de l'ouvrir.</q>
+    </p>
+</body>
+
+
+
+<script>
+    
+    function changeColor() {
+
+        // Accéde à l'élément parent
+        event.target.parentElement.style.color = "navy";
+    }
+</script>
+</html>
+
+

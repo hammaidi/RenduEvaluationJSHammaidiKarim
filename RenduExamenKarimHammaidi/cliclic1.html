@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Clics et déclics</title>
+	
+</head>
+<body>
+	
+	<p onclick="myEvent()">Une citation de Pierre Dac&thinsp;: 
+        <q>Parler pour ne rien dire et ne rien dire pour parler sont les deux principes majeurs et rigoureux de tous ceux qui feraient mieux de la fermer avant de l'ouvrir.</q>
+    </p>
+</body>
+
+
+<script>
+    // Fonction pour souligner 
+    function myEvent() {
+        
+        event.target.style.textDecoration = "underline";
+    }
+</script>
+</html>
+

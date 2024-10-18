@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Sliders4</title>
+    <script>
+        
+        function updateStyle() {
+            
+            const red = document.getElementById('slider_red').value;
+            const green = document.getElementById('slider_green').value;
+            const blue = document.getElementById('slider_blue').value;
+            const size = document.getElementById('slider_size').value;
+
+            
+            const paragraph = document.getElementById('info');
+            paragraph.style.color = `rgb(${red}, ${green}, ${blue})`;
+            paragraph.style.fontSize = `${size}px`;
+        }
+
+        
+        function Init() {
+            const sliders = document.querySelectorAll('input[type="range"]');
+            sliders.forEach(slider => {
+                
+                slider.addEventListener('input', updateStyle);
+            });
+        }
+    </script>
+</head>
+<body onload="Init()">
+    <label for="slider_red">Niveau de rouge</label><input id="slider_red" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_green">Niveau de vert</label><input id="slider_green" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_blue">Niveau de bleu</label><input id="slider_blue" type="range" min="0" max="255" step="5"><br>
+    <label for="slider_size">Taille</label><input id="slider_size" type="range" min="8" max="16" step="1"><br>
+
+    <p id="info">Ceci est un texte.</p>
+</body>
+</html>

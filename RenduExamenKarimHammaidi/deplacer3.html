@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <style>
+    .wrapper {
+      display: grid;
+      grid-template-columns: 300px 300px;
+    }
+    .fondgris {
+      background-color: gray;
+    }
+    li {
+      background-color: inherit;
+      cursor: pointer; /* Ajoute un curseur pointer pour indiquer la cliquabilité */
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <ul id="liste1">
+    <li>item 1-1</li>
+    <li>item 1-2</li>
+    <li>item 1-3</li>
+    <li>item 1-4</li>
+  </ul>
+  <ul id="liste2">
+    <li>item 2-1</li>
+    <li>item 2-2</li>
+    <li>item 2-3</li>
+    <li>item 2-4</li>
+  </ul>
+</div>
+<button id="btnechange" onclick="ajoutIdentifiants()">Déplacer les éléments</button>
+
+<script> 
+   
+    function surbrillance(event) {
+    const liElement = event.target; 
+    liElement.classList.toggle('fondgris'); 
+  }
+
+  
+  function initSurbrillance() {
+    const items = document.querySelectorAll('li');
+    
+
+    items.forEach(item => {
+      item.addEventListener('click', surbrillance);
+    });
+  }
+
+  
+  window.onload = initSurbrillance;
+</script>
+
+</body>
+</html>
+
+
+

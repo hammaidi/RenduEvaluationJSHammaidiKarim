@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title></title>
+
+</head>
+<body onload="Init()">
+<button onclick="saisieChaine()" id="btnchaine">Saisissez une chaîne…</button>
+</body>
+
+
+<script>
+	function Init() {
+		
+	}
+
+    function saisieChaine() {
+        
+        let chaine = prompt("saisisez une phrase :");
+
+
+        if (chaine) {
+            let chaineModifiee = "";  // Variable qui stocke la chaîne modifiée
+
+            // Parcours chaque caractère de la chaîne
+            for (let i = 0; i < chaine.length; i++) {
+                if (i % 2 === 0) {
+                    // Si l'index est pair, mettre en majuscule
+                    chaineModifiee += chaine[i].toUpperCase();
+                } else {
+                    // Si l'index est impair, mettre en minuscule
+                    chaineModifiee += chaine[i].toLowerCase();
+                }
+            }
+
+            
+            console.log(chaineModifiee);
+        } else {
+            console.log("Aucune chaîne saisie.");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+</script>
+</html>
+
+
+
+
+
+
+

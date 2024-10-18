@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Sigles</title>
+<meta charset="UTF-8">
+
+</head>
+<body>
+<p>La <abbr title="Validation des Acquis de l'Expérience">VAE</abbr> des <abbr title="Diplômes d'Université">DU</abbr> est une des missions du <abbr title="Service de Formation Continue">SFC</abbr> de l'<abbr title="Université Pierre et Marie Curie">UPMC</abbr>. Les titres professionnels délivrés par l'<acronym title="Association pour la formation professionnelle des adultes">AFPA</acronym> peuvent aussi être obtenus par la <abbr>VAE</abbr>.</p>
+</body>
+
+
+
+
+<script>
+        function afficherDefinitions() {
+            //tableau stocke les sigles
+            const sigles = [];
+
+            const abbrElements = document.querySelectorAll('abbr');
+            const acronymElements = document.querySelectorAll('acronym');
+
+
+
+           
+            abbrElements.forEach(function(el) {
+                sigles.push({ sigle: el.textContent, definition: el.getAttribute('title') });
+            });
+
+            
+            acronymElements.forEach(function(el) {
+                sigles.push({ sigle: el.textContent, definition: el.getAttribute('title') });
+            });
+
+            
+            const dl = document.createElement('dl');
+            dl.setAttribute('id', 'index_sigles');
+
+            
+            sigles.forEach(function(sigle) {
+                const dt = document.createElement('dt');
+                dt.textContent = sigle.sigle;
+                
+                const dd = document.createElement('dd');
+                dd.textContent = sigle.definition;
+
+                dl.appendChild(dt);
+                dl.appendChild(dd);
+            });
+
+            
+            document.body.appendChild(dl);
+        }
+
+        
+        window.onload = afficherDefinitions;
+    </script>
+
+</script>
+
+
+
+</html>
